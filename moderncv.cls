@@ -258,6 +258,10 @@
     }
 
 
+% http://latex.org/forum/viewtopic.php?t=12239
+\def\SplitMyMacro#1/#2{#2}
+    
+    
 % adds a social link to one's personal information (optional)
 % usage: \social[<optional type>][<optional url>]{<account name>}
 % where <optional type> should be either "linkedin", "xing", "twitter", "github", "gitlab" or "skype"
@@ -270,6 +274,7 @@
       \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\link[#3]{https://www.twitter.com/#3}}}     {}%
       \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\link[#3]{https://www.github.com/#3}}}      {}%
       \ifthenelse{\equal{#1}{gitlab}}  {\collectionadd[gitlab]{socials}  {\protect\link[#3]{https://www.gitlab.com/#3}}}      {}%
+      \ifthenelse{\equal{#1}{stackoverflow}}  {\collectionadd[stackoverflow]{socials}  {\protect\link[\SplitMyMacro#3]{https://stackoverflow.com/users/#3}}}      {}%
       \ifthenelse{\equal{#1}{skype}}   {\collectionadd[skype]{socials}   {#3}}                                            {}%
     }
     {\collectionadd[#1]{socials}{\protect\link[#3]{#2}}}}
@@ -313,6 +318,7 @@
 \newcommand*{\githubsocialsymbol}  {}
 \newcommand*{\gitlabsocialsymbol}  {}
 \newcommand*{\skypesocialsymbol}   {}
+\newcommand*{\stackoverflowsocialsymbol} {}
 
 % other
 %------
